@@ -22,7 +22,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-robots-txt",
-    "gatsby-plugin-netlify",
     {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
