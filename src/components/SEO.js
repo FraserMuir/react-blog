@@ -9,6 +9,7 @@ const query = graphql`
       siteMetadata {
         defaultTitle: title
         titleTemplate
+        origins
         defaultDescription: description
         siteUrl: url
         defaultImage: image
@@ -21,17 +22,21 @@ const query = graphql`
 export const SEO = ({ title, description, image, isArticle = true }) => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
-  const { defaultTitle, titleTemplate, defaultDescription, siteUrl, defaultImage, twitterUsername } = site.siteMetadata;
+  const { defaultTitle, titleTemplate, defaultDescription, origins, siteUrl, defaultImage, twitterUsername } = site.siteMetadata;
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
+    origins: origins || [],
   };
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
+      {seo.origins.map((origin) => (
+        <link rel="dns-prefetch" href={origin} key={origin}></link>
+      ))}
       {seo.url && <meta property="og:url" content={seo.url} />}
       {isArticle && <meta property="og:type" content="article" />}
       {seo.title && <meta property="og:title" content={seo.title} />}

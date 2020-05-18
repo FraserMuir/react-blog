@@ -10,6 +10,7 @@ module.exports = {
   siteMetadata: {
     title: "Web Tricks",
     siteUrl: "https://web-tricks.dev/",
+    origins: ["https://images.ctfassets.net"],
     titleTemplate: "%s · Web Tricks",
     description: "A collection of web development tips and tricks.",
     url: "https://web-tricks.dev",
