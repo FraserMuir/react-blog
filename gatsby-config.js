@@ -9,11 +9,12 @@ const contentfulConfig = {
 module.exports = {
   siteMetadata: {
     title: "Web Tricks",
+    url: "https://web-tricks.dev",
     siteUrl: "https://web-tricks.dev/",
+    blogUrl: "/blogs",
     origins: ["https://images.ctfassets.net"],
     titleTemplate: "%s · Web Tricks",
     description: "A collection of web development tips and tricks.",
-    url: "https://web-tricks.dev",
     image: "logo.webp",
     twitterUsername: "@frasermuir14",
   },

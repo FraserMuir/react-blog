@@ -2,39 +2,78 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
-const StyledHeader = styled.header`
-  background: white;
-  border-bottom: 1px solid gray;
+const StyledHeaderPadding = styled.section`
+  background: #20232a;
+  height: 3rem;
   width: 100%;
-  & > .header-container {
+  margin-bottom: -1px;
+`;
+
+const StyledHeader = styled.header`
+  position: sticky;
+  top: -1px;
+  height: 5rem;
+  background: #20232a;
+  z-index: 99;
+  nav {
+    height: 100%;
     width: 100%;
-    max-width: 80rem;
+    max-width: 60rem;
     margin: auto;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+  }
+
+  .tab-container {
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    color: white;
+    transition: color 0.3s;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledTab = styled(Link)`
   padding: 2rem;
-  text-decoration: none;
   margin-left: 1rem;
-  color: black;
-  transition: color 0.3s;
-  &:hover {
-    text-decoration: underline;
-    color: blue;
+`;
+
+const StyledHomeLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  img {
+    height: 100%;
+    width: auto;
+    box-sizing: border-box;
+    margin: 1rem;
   }
 `;
 
 export const Header = () => {
   return (
-    <StyledHeader>
-      <div className="header-container">
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/blog">Blog</StyledLink>
-        <StyledLink to="/about">About</StyledLink>
-      </div>
-    </StyledHeader>
+    <>
+      <StyledHeaderPadding />
+      <StyledHeader>
+        <nav>
+          <StyledHomeLink to="/">
+            <img src="/logo.webp" alt="Web Tricks Logo" />
+            Web Tricks
+          </StyledHomeLink>
+          <div className="tab-container">
+            <StyledTab to="/">Home</StyledTab>
+            <StyledTab to="/blog">Blog</StyledTab>
+            <StyledTab to="/about">About</StyledTab>
+          </div>
+        </nav>
+      </StyledHeader>
+    </>
   );
 };

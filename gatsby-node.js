@@ -13,13 +13,20 @@ exports.createPages = async ({ graphql, actions: { createPage } }) => {
           }
         }
       }
+      site {
+        siteMetadata {
+          blogUrl
+        }
+      }
     }
   `);
 
-  const posts = data.allContentfulBlogPost.edges;
-  posts.forEach((post) => {
+  const { edges } = data.allContentfulBlogPost;
+  const { blogUrl } = data.site.siteMetadata;
+
+  edges.forEach((post) => {
     createPage({
-      path: `/blog/${post.node.slug}/`,
+      path: `${blogUrl}/${post.node.slug}/`,
       component: blogTemplatePath,
       context: {
         slug: post.node.slug,
