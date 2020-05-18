@@ -20,6 +20,15 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-robots-txt",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-styled-components",
+    {
+      resolve: "gatsby-plugin-layout",
+      options: {
+        component: require.resolve("./src/components/Layout"),
+      },
+    },
     {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
