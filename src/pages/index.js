@@ -4,7 +4,7 @@ import { PageContainer } from "../components/PageContainer";
 const HomePage = () => {
   return (
     <PageContainer title="Home" isArticle={false}>
-      <h1>My blog</h1>
+      <h1>My blog!afawf!</h1>
     </PageContainer>
   );
 };
