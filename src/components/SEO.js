@@ -35,7 +35,7 @@ export const SEO = ({ title, description, image, isArticle = true }) => {
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       {seo.origins.map((origin) => (
-        <link rel="dns-prefetch" href={origin} key={origin}></link>
+        <link rel="preconnect" href={origin} key={origin}></link>
       ))}
       {seo.url && <meta property="og:url" content={seo.url} />}
       {isArticle && <meta property="og:type" content="article" />}
