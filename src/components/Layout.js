@@ -21,7 +21,7 @@ const StyledLayout = styled.div`
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    margin: 0 4vw 6rem;
+    padding: 0 4vw 6rem;
   }
 `;
 
