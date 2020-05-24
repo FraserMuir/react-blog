@@ -11,7 +11,7 @@ module.exports = {
     title: "Web Tricks",
     url: "https://web-tricks.dev",
     siteUrl: "https://web-tricks.dev/",
-    blogUrl: "/blogs",
+    blogUrl: "/blog",
     origins: ["https://images.ctfassets.net"],
     titleTemplate: "%s · Web Tricks",
     description: "A collection of web development tips and tricks.",
