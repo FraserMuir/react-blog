@@ -1,11 +1,12 @@
 import React from "react";
 import { TransitionGroup, Transition as ReactTransition } from "react-transition-group";
 
-const timeout = 150;
+export const timeout = 125;
+
 const transitionStyles = {
   entering: {
     position: "absolute",
-    transform: 'scale(0.95)',
+    transform: 'scale(0.965)',
     opacity: 0,
   },
   entered: {
@@ -19,7 +20,7 @@ const transitionStyles = {
     opacity: 0,
   },
   exited: {
-    transform: 'scale(0.95)',
+    transform: 'scale(0.965)',
     opacity: 0,
   }
 };
