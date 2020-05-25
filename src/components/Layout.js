@@ -1,8 +1,8 @@
 import React, { useState, useContext, useEffect } from "react";
-// import React, { useState, useContext, useEffect, useCallback } from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { SEO } from "./SEO";
 import { Header } from "./Header";
+import { Transition } from "./Transition";
 
 const GlobalStyle = createGlobalStyle`
   html, body { 
@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 const StyledLayout = styled.div`
   width: 100%;
   height: 100%;
-  & > main {
+  main {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -41,7 +41,7 @@ export const usePage = ({ title, description, image, isArticle } = defaultPageCo
   }, [setValue, pageData]);
 };
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   const [pageData, setPageData] = useState(defaultPageContextValue);
 
   return (
@@ -50,7 +50,9 @@ const Layout = ({ children }) => {
         <GlobalStyle />
         <SEO {...pageData} />
         <Header />
-        <main>{children}</main>
+        <Transition location={location}>
+          {children}
+        </Transition>
       </PageContext.Provider>
     </StyledLayout>
   );
