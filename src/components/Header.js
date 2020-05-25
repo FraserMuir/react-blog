@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { Link } from "gatsby";
 import { Logo } from "./Logo";
 
 const StyledHeaderPadding = styled.section`
@@ -58,20 +58,7 @@ const StyledHomeLink = styled(Link)`
   }
 `;
 
-const query = graphql`
-  query Header {
-    site {
-      siteMetadata {
-        blogUrl
-      }
-    }
-  }
-`;
-
 export const Header = () => {
-  const { site } = useStaticQuery(query);
-  const { blogUrl } = site.siteMetadata;
-
   return (
     <>
       <StyledHeaderPadding />
@@ -82,8 +69,6 @@ export const Header = () => {
             Web Tricks
           </StyledHomeLink>
           <div className="tab-container">
-            <StyledTab to="/">Home</StyledTab>
-            <StyledTab to={blogUrl}>Blog</StyledTab>
             <StyledTab to="/about">About</StyledTab>
           </div>
         </nav>
