@@ -94,7 +94,7 @@ const StyledPost = styled(Link)`
     }
   }
 
-  @media (min-width: ${size.laptop}) {
+  @media (min-width: ${size.laptop - 1}) {
     &:hover {
       .details {
         padding-top: 4rem;
