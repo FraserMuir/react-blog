@@ -22,7 +22,7 @@ const StyledBlogContainer = styled.div`
     }
   }
   & > article {
-    font-family: "noto-serif";
+    font-family: "Noto Serif";
     line-height: 2.3rem;
     width: 90%;
     font-size: 23px;
