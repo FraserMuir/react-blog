@@ -7,7 +7,7 @@ import { device } from "helpers/breakpoints";
 
 const StyledBlogContainer = styled.div`
   width: 100%;
-  max-width: 800px;
+  max-width: 755px;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -24,11 +24,20 @@ const StyledBlogContainer = styled.div`
   & > article {
     font-family: "Noto Serif";
     line-height: 2.3rem;
+    word-spacing: 1px;
     width: 90%;
-    font-size: 23px;
+    font-size: 19px;
+    @media ${device.laptop} {
+      width: 92.5%;
+      font-size: 18px;
+    }
+    @media ${device.tablet} {
+      width: 95%;
+      font-size: 17px;
+    }
     @media ${device.mobile} {
-      width: 97%;
-      font-size: 21px;
+      width: 98%;
+      font-size: 14px;
     }
   }
 `;
