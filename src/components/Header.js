@@ -2,12 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { Logo } from "./Logo";
+import { device } from "helpers/breakpoints";
 
 const StyledHeaderPadding = styled.section`
   background: #20232a;
-  height: 3rem;
   width: 100%;
   margin-bottom: -1px;
+  height: 3rem;
+  @media ${device.tablet} {
+    height: 0;
+  }
 `;
 
 const StyledHeader = styled.header`

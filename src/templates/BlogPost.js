@@ -14,7 +14,7 @@ const StyledBlogContainer = styled.div`
   & > .picture {
     width: calc(100% + 10rem);
     max-width: 100vw;
-    
+
     transition: margin 0.3s;
     margin-top: 2rem;
     @media ${device.tablet} {
@@ -31,7 +31,9 @@ const BlogPost = ({ data: { contentfulBlogPost: post } }) => {
     title,
     createdAt,
     heroImage,
-    body: { body: content },
+    body: {
+      childMarkdownRemark: { html: content },
+    },
   } = post;
 
   return (
@@ -59,7 +61,9 @@ export const pageQuery = graphql`
         }
       }
       body {
-        body
+        childMarkdownRemark {
+          html
+        }
       }
     }
   }

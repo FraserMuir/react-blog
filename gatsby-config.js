@@ -25,6 +25,7 @@ module.exports = {
     "gatsby-plugin-robots-txt",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
+    "gatsby-transformer-remark",
     "gatsby-plugin-styled-components",
     {
       resolve: "gatsby-plugin-layout",
