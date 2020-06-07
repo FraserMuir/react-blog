@@ -1,6 +1,3 @@
-import "typeface-montserrat";
-import "typeface-noto-serif";
-
 import { timeout } from "components/Transition";
 
 export const shouldUpdateScroll = ({ routerProps: { location }, getSavedScrollPosition }) => {

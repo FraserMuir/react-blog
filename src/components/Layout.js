@@ -4,6 +4,9 @@ import { SEO } from "./SEO";
 import { Header } from "./Header";
 import { Transition } from "./Transition";
 
+import "typeface-montserrat";
+import "typeface-noto-serif";
+
 const GlobalStyle = createGlobalStyle`
   html, body { 
     padding: 0;
