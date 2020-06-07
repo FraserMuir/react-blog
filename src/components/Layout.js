@@ -12,6 +12,9 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     font-size: 14px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color: rgba(0,0,0,0.8);
   }
   pre {
     white-space: pre-wrap;

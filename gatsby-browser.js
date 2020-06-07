@@ -1,6 +1,9 @@
-const { timeout } = require("./src/components/Transition");
+import "typeface-montserrat";
+import "typeface-noto-serif";
 
-exports.shouldUpdateScroll = ({ routerProps: { location }, getSavedScrollPosition }) => {
+import { timeout } from "components/Transition";
+
+export const shouldUpdateScroll = ({ routerProps: { location }, getSavedScrollPosition }) => {
   if (location.action === "PUSH") {
     window.setTimeout(() => window.scrollTo(0, 0), timeout);
   } else {

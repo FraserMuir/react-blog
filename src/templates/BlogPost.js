@@ -22,12 +22,13 @@ const StyledBlogContainer = styled.div`
     }
   }
   & > article {
-    line-height: 1.65;
+    font-family: "noto-serif";
+    line-height: 2.3rem;
     width: 90%;
-    font-size: 1.3rem;
+    font-size: 23px;
     @media ${device.mobile} {
       width: 97%;
-      font-size: 1.15rem;
+      font-size: 21px;
     }
   }
 `;

@@ -15,7 +15,7 @@
     "gatsby-plugin-offline": "^3.2.2",
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-resolve-src": "^2.1.0",
-    "gatsby-plugin-robots-txt": "^1.5.0",
+    "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sharp": "^2.6.4",
     "gatsby-plugin-sitemap": "^2.4.2",
     "gatsby-plugin-styled-components": "^3.3.1",
@@ -26,7 +26,9 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.0.0",
     "react-transition-group": "^4.4.1",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "typeface-montserrat": "0.0.75",
+    "typeface-noto-serif": "0.0.72"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
