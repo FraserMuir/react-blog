@@ -22,7 +22,13 @@ const StyledBlogContainer = styled.div`
     }
   }
   & > article {
-    width: 100%;
+    line-height: 1.65;
+    width: 90%;
+    font-size: 1.3rem;
+    @media ${device.mobile} {
+      width: 97%;
+      font-size: 1.15rem;
+    }
   }
 `;
 
