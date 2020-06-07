@@ -36,8 +36,10 @@ const StyledBlogContainer = styled.div`
       font-size: 17px;
     }
     @media ${device.mobile} {
-      width: 98%;
-      font-size: 14px;
+      line-height: 2rem;
+      word-spacing: 0.5px;
+      width: 97.5%;
+      font-size: 16px;
     }
   }
 `;
