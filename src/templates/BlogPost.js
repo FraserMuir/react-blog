@@ -22,6 +22,7 @@ const StyledBlogContainer = styled.div`
     }
   }
   & > article {
+    color: rgba(0, 0, 0, 0.84);
     font-family: "Noto Serif";
     line-height: 2.3rem;
     word-spacing: 1px;
