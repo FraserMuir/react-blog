@@ -134,7 +134,7 @@ const Home = ({ data }) => {
         } = node;
         return (
           <StyledPost key={i} to={`/blog/${slug}`}>
-            <Img className="picture" {...heroImage} alt={title} imgStyle={{ width: "800px", height: "450px" }} />
+            <Img className="picture" {...heroImage} alt={title} />
             <div className="details">
               <p className="desc">{description}</p>
               <div className="post-title">
