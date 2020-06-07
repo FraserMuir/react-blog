@@ -3,14 +3,26 @@ import Img from "gatsby-image";
 import styled from "styled-components";
 import { graphql } from "gatsby";
 
+import { device } from "helpers/breakpoints";
+
 const StyledBlogContainer = styled.div`
   width: 100%;
   max-width: 800px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   & > .picture {
-    margin: 3rem -4vw;
-    @media (max-width: 800px) {
+    width: calc(100% + 10rem);
+    max-width: 100vw;
+    
+    transition: margin 0.3s;
+    margin-top: 2rem;
+    @media ${device.tablet} {
       margin-top: 0;
     }
+  }
+  & > article {
+    width: 100%;
   }
 `;
 
@@ -25,9 +37,11 @@ const BlogPost = ({ data: { contentfulBlogPost: post } }) => {
   return (
     <StyledBlogContainer>
       <Img className="picture" {...heroImage} alt={title} />
-      <h1>{title}</h1>
-      <p>{createdAt}</p>
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <article>
+        <h1>{title}</h1>
+        <p>{createdAt}</p>
+        <div dangerouslySetInnerHTML={{ __html: content }} />
+      </article>
     </StyledBlogContainer>
   );
 };

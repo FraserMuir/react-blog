@@ -1,5 +1,5 @@
 import React from "react";
-import { usePage } from "../components/Layout";
+import { usePage } from "components/Layout";
 
 const PageNotFound = () => {
   usePage({ title: "404", description: "Page Not Found" });

@@ -2,7 +2,8 @@ import React from "react";
 import Img from "gatsby-image";
 import styled from "styled-components";
 import { graphql, Link } from "gatsby";
-import { usePage } from "../components/Layout";
+import { usePage } from "components/Layout";
+import { device, size } from "helpers/breakpoints";
 
 const StyledPostsList = styled.div`
   display: flex;
@@ -26,12 +27,33 @@ const StyledPost = styled(Link)`
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 4rem 1.5rem 1.5rem;
+    padding: 0 1.5rem 1.5rem;
     background: linear-gradient(to top, black 10%, rgba(0, 0, 0, 0.8) 45%, rgba(0, 0, 0, 0.65) 60%, transparent);
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    will-change: opacity;
+    transition: opacity 0.45s;
+    opacity: 0.85;
+    min-height: 30%;
+    @media ${device.laptop} {
+      min-height: 20%;
+      padding-top: 2rem;
+      opacity: 0.9;
+    }
 
     & > .desc {
+      display: flex;
+      @media ${device.laptop} {
+        display: none;
+      }
+      align-items: flex-end;
       color: rgba(255, 255, 255, 0.8);
       margin: 0;
+      min-height: 8rem;
+      max-height: 12rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
       font-size: 1.5rem;
       margin-right: 10rem;
       will-change: transform, opacity;
@@ -46,28 +68,46 @@ const StyledPost = styled(Link)`
       align-items: flex-end;
 
       & > .title {
-        color: rgba(255, 255, 255, 0.87);
         margin: 0;
+        color: rgba(255, 255, 255);
         font-size: 2.5rem;
+        @media ${device.laptop} {
+          font-size: 2.1rem;
+        }
+        @media ${device.tablet} {
+          font-size: 1.75rem;
+        }
         will-change: transform, opacity;
         transition: transform 0.2s, opacity 0.2s;
       }
       & > .date {
-        color: rgba(255, 255, 255, 0.6);
         margin: 0;
+        color: rgba(255, 255, 255, 0.8);
         font-size: 1.5rem;
+        @media ${device.laptop} {
+          font-size: 1.3rem;
+        }
+        @media ${device.tablet} {
+          font-size: 1.2rem;
+        }
       }
     }
   }
 
-  &:hover {
-    .title {
-      transform: translate(0, -2.5rem);
-      opacity: 0;
-    }
-    .desc {
-      transform: translate(0, 3rem);
-      opacity: 1;
+  @media (min-width: ${size.laptop}) {
+    &:hover {
+      .details {
+        padding-top: 4rem;
+        opacity: 1;
+      }
+      .title {
+        transform: translate(0, -2.5rem);
+        opacity: 0;
+      }
+      .desc {
+        transform: translate(0, 3rem);
+        opacity: 1;
+      }
     }
   }
 
@@ -80,8 +120,7 @@ const StyledPost = styled(Link)`
 const Home = ({ data }) => {
   usePage({ title: "Home", description: "Home Page" });
 
-  let { edges: posts } = data.allContentfulBlogPost;
-  // posts = [...posts, ...posts, ...posts, ...posts];
+  const { edges: posts } = data.allContentfulBlogPost;
 
   return (
     <StyledPostsList>
@@ -97,7 +136,7 @@ const Home = ({ data }) => {
           <StyledPost key={i} to={`/blog/${slug}`}>
             <Img className="picture" {...heroImage} alt={title} imgStyle={{ width: "800px", height: "450px" }} />
             <div className="details">
-              <p className="desc">{`${description} ${description} ${description} ${description} ${description} ${description}`}</p>
+              <p className="desc">{description}</p>
               <div className="post-title">
                 <h1 className="title">{title}</h1>
                 <h3 className="date">{createdAt}</h3>

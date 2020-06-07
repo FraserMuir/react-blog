@@ -35,7 +35,7 @@ export const Transition = ({ children, location }) => {
           exit: timeout,
         }}
       >
-        {(status) => <main style={{ ...transitionStyles[status] }}>{children}</main>}
+        {(status) => <main style={{ ...transitionStyles[status], transformOrigin: "center 10%" }}>{children}</main>}
       </ReactTransition>
     </TransitionGroup>
   );
