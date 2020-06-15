@@ -27,6 +27,7 @@
     "react-helmet": "^6.0.0",
     "react-transition-group": "^4.4.1",
     "styled-components": "^5.1.0",
+    "typeface-lobster-two": "0.0.72",
     "typeface-montserrat": "0.0.75",
     "typeface-noto-serif": "0.0.72"
   },

@@ -26,6 +26,10 @@ const transitionStyles = {
 };
 
 export const Transition = ({ children, location }) => {
+  if (localStorage.getItem("use-transition") !== "true") {
+    return <main>{children}</main>;
+  }
+  
   return (
     <TransitionGroup>
       <ReactTransition

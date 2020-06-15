@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { graphql } from "gatsby";
 
 import { device } from "helpers/breakpoints";
+import { fonts } from "helpers/fonts";
 
 const StyledBlogContainer = styled.div`
   width: 100%;
@@ -23,7 +24,7 @@ const StyledBlogContainer = styled.div`
   }
   & > article {
     color: rgba(0, 0, 0, 0.84);
-    font-family: "Noto Serif";
+    font-family: ${fonts.serif};
     line-height: 2.3rem;
     word-spacing: 1px;
     width: 90%;

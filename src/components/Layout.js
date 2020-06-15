@@ -6,18 +6,21 @@ import { Transition } from "./Transition";
 
 import "typeface-montserrat";
 import "typeface-noto-serif";
+import "typeface-lobster-two";
+import { fonts } from "helpers/fonts";
 
 const GlobalStyle = createGlobalStyle`
-  html, body { 
+  body { 
     padding: 0;
     margin: 0;
     width: 100%;
     height: 100%;
     font-size: 14px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: ${fonts.sansSerif};
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     color: rgba(0,0,0,0.8);
+    overflow: auto scroll;
   }
   pre {
     white-space: pre-wrap;
@@ -31,7 +34,7 @@ const StyledLayout = styled.div`
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    padding: 0 4vw 6rem;
+    padding: 5rem 4vw 6rem;
   }
 `;
 
@@ -60,9 +63,7 @@ const Layout = ({ children, location }) => {
         <GlobalStyle />
         <SEO {...pageData} />
         <Header />
-        <Transition location={location}>
-          {children}
-        </Transition>
+        <Transition location={location}>{children}</Transition>
       </PageContext.Provider>
     </StyledLayout>
   );

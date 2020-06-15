@@ -4,12 +4,13 @@ import styled from "styled-components";
 import { graphql, Link } from "gatsby";
 import { usePage } from "components/Layout";
 import { device, size } from "helpers/breakpoints";
+import { fonts } from "helpers/fonts";
 
 const StyledPostsList = styled.div`
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
-  max-width: 800px;
+  max-width: 60rem;
   margin-top: 2rem;
 `;
 
@@ -48,13 +49,13 @@ const StyledPost = styled(Link)`
         display: none;
       }
       align-items: flex-end;
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(255, 255, 255, 0.7);
       margin: 0;
       min-height: 8rem;
       max-height: 12rem;
       overflow: hidden;
       text-overflow: ellipsis;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       margin-right: 10rem;
       will-change: transform, opacity;
       transition: transform 0.2s, opacity 0.2s;
@@ -69,20 +70,22 @@ const StyledPost = styled(Link)`
 
       & > .title {
         margin: 0;
-        color: rgba(255, 255, 255);
-        font-size: 2.5rem;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 3rem;
+        font-family: ${fonts.display};
         @media ${device.laptop} {
-          font-size: 2.1rem;
+          font-size: 2.5rem;
         }
         @media ${device.tablet} {
-          font-size: 1.75rem;
+          font-size: 2.25rem;
         }
         will-change: transform, opacity;
         transition: transform 0.2s, opacity 0.2s;
       }
       & > .date {
+        font-family: ${fonts.display};
         margin: 0;
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba(255, 255, 255, 0.7);
         font-size: 1.5rem;
         @media ${device.laptop} {
           font-size: 1.3rem;
@@ -94,7 +97,7 @@ const StyledPost = styled(Link)`
     }
   }
 
-  @media (min-width: ${size.laptop - 1}) {
+  @media (min-width: ${size.laptop}) {
     &:hover {
       .details {
         padding-top: 4rem;
@@ -138,7 +141,7 @@ const Home = ({ data }) => {
             <div className="details">
               <p className="desc">{description}</p>
               <div className="post-title">
-                <h1 className="title">{title}</h1>
+                <h2 className="title">{title}</h2>
                 <h3 className="date">{createdAt}</h3>
               </div>
             </div>
