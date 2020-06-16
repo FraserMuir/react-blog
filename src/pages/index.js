@@ -49,7 +49,7 @@ const StyledPost = styled(Link)`
         display: none;
       }
       align-items: flex-end;
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.85);
       margin: 0;
       min-height: 8rem;
       max-height: 12rem;
@@ -87,6 +87,7 @@ const StyledPost = styled(Link)`
         margin: 0;
         color: rgba(255, 255, 255, 0.7);
         font-size: 1.5rem;
+        transition: color 0.3s ease;
         @media ${device.laptop} {
           font-size: 1.3rem;
         }
@@ -106,6 +107,9 @@ const StyledPost = styled(Link)`
       .title {
         transform: translate(0, -2.5rem);
         opacity: 0;
+      }
+      .date {
+        color: rgba(255, 255, 255, 0.85) !important;
       }
       .desc {
         transform: translate(0, 3rem);

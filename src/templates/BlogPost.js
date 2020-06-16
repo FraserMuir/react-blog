@@ -8,7 +8,7 @@ import { fonts } from "helpers/fonts";
 
 const StyledBlogContainer = styled.div`
   width: 100%;
-  max-width: 755px;
+  max-width: 55rem;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -26,16 +26,16 @@ const StyledBlogContainer = styled.div`
     color: rgba(0, 0, 0, 0.84);
     font-family: ${fonts.serif};
     line-height: 2.3rem;
-    word-spacing: 1px;
+    letter-spacing: -0.2px;
     width: 90%;
-    font-size: 19px;
+    font-size: 22px;
     @media ${device.laptop} {
       width: 92.5%;
-      font-size: 18px;
+      font-size: 20px;
     }
     @media ${device.tablet} {
       width: 95%;
-      font-size: 17px;
+      font-size: 18px;
     }
     @media ${device.mobile} {
       line-height: 2rem;
