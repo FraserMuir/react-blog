@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { Logo } from "./Logo";
+import { debounce } from "helpers/debounce";
 
 const StyledHeader = styled.header`
   position: fixed;
-  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+  box-shadow: ${props => props.scrolled && "0 0 3rem rgba(0, 0, 0, 0.1)"};
   top: 0;
-  height: 5rem;
-  background: #fff;
+  height: ${props => props.scrolled ? "3.75rem": "5rem"};
+  background: ${props => props.scrolled ? "rgba(255, 255, 255, 0.9)" : "white"};
+  backdrop-filter: blur(5px);
+  transition: box-shadow 0.3s ease, height 0.13s;
   z-index: 99;
   width: 100%;
   contain: layout;
@@ -21,6 +24,7 @@ const StyledHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 1rem;
   }
 
   a {
@@ -55,8 +59,15 @@ const StyledHomeLink = styled(Link)`
 `;
 
 export const Header = () => {
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const storeScroll = () => setHasScrolled(window.scrollY > 35);
+    document.addEventListener("scroll", debounce(storeScroll), { passive: true });
+  }, []);
+
   return (
-    <StyledHeader>
+    <StyledHeader scrolled={hasScrolled}>
       <nav>
         <StyledHomeLink to="/">
           <Logo />

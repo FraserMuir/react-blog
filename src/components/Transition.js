@@ -1,45 +1,27 @@
 import React from "react";
 import { TransitionGroup, Transition as ReactTransition } from "react-transition-group";
 
-export const timeout = 125;
-
 const transitionStyles = {
   entering: {
-    position: "absolute",
-    transform: 'scale(0.965)',
     opacity: 0,
   },
   entered: {
-    transition: `all ${timeout}ms ease-out`,
-    transform: 'scale(1)',
+    transition: "opacity 200ms ease-out",
     opacity: 1,
   },
-  exiting: {
-    transition: `all ${timeout}ms ease-out`,
-    transform: 'scale(1)',
-    opacity: 0,
-  },
-  exited: {
-    transform: 'scale(0.965)',
-    opacity: 0,
-  }
 };
 
 export const Transition = ({ children, location }) => {
-  if (localStorage.getItem("use-transition") !== "true") {
-    return <main>{children}</main>;
-  }
-  
   return (
     <TransitionGroup>
       <ReactTransition
         key={location.pathname}
         timeout={{
-          enter: timeout,
-          exit: timeout,
+          enter: 0,
+          exit: 0,
         }}
       >
-        {(status) => <main style={{ ...transitionStyles[status], transformOrigin: "center 10%" }}>{children}</main>}
+        {(status) => <main style={{ ...transitionStyles[status] }}>{children}</main>}
       </ReactTransition>
     </TransitionGroup>
   );
