@@ -78,6 +78,9 @@ const StyledPost = styled(Link)`
     height: 100%;
     border-radius: 0.5rem;
     box-shadow: 0 25px 40px 6px rgba(0, 0, 0, 0.1), 0 18px 25px 3px rgba(0, 0, 0, 0.2), 0 7px 12px 1px rgba(0, 0, 0, 0.1);
+    @media ${device.mobile} {
+      box-shadow: 0 22px 25px 4px rgba(0, 0, 0, 0.075), 0 15px 13px 2px rgba(0, 0, 0, 0.125), 0 6px 8px 0.5px rgba(0, 0, 0, 0.075);
+    }
   }
 `;
 
