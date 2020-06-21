@@ -8,6 +8,7 @@ import "typeface-montserrat";
 import "typeface-noto-serif";
 import "typeface-lobster-two";
 import { fonts } from "helpers/fonts";
+import { device } from "helpers/breakpoints";
 
 const GlobalStyle = createGlobalStyle`
   body { 
@@ -34,7 +35,10 @@ const StyledLayout = styled.div`
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    padding: 5rem 4vw 6rem;
+    padding: 4rem 4vw 6rem;
+    @media ${device.mobile} {
+      padding: 3rem 4vw 4rem;
+    }
   }
 `;
 

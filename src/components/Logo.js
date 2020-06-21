@@ -1,26 +1,41 @@
 import React from "react";
 import styled from "styled-components";
 import { fonts } from "helpers/fonts";
+import { colors } from "helpers/colors";
+import { device } from "helpers/breakpoints";
 
 const StyledLogoContainer = styled.div`
   display: flex;
   align-items: center;
   & > h1 {
     text-decoration: none !important;
-    margin: 0 0.5rem;
+    margin: 0 0.75rem;
     font-family: ${fonts.display};
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: bolder;
     letter-spacing: 1px;
-    color: #444;
+    color: ${colors.mediumText};
+    text-shadow: 2px 2px 0 ${colors.lightBlue};
+    white-space: nowrap;
+    transition: all 0.3s;
   }
-  &:hover > div {
-    background: #a8dfff;
+  @media ${device.mobile} {
+    transition: all 0.3s;
+    transform-origin: 0% 50%;
+    transform: scale(0.75);
+    .logo {
+      transition: all 0.3s;
+      transform-origin: 0% 50%;
+      transform: scale(0.9);
+    }
+    & > h1 {
+      margin: 0 0.3rem;
+    }
   }
 `;
 
 const StyledLogo = styled.div`
-  background: #5ec5ff;
+  background: ${colors.blue};
   transition: background 0.3s;
   border-radius: 50%;
   height: 3rem;
@@ -36,8 +51,8 @@ const StyledLogo = styled.div`
 
 export const Logo = () => {
   return (
-    <StyledLogoContainer>
-      <StyledLogo>
+    <StyledLogoContainer className="logo-container">
+      <StyledLogo className="logo">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 435 435" version="1.0">
           <svg height="286" width="196" x="124" y="80">
             <path

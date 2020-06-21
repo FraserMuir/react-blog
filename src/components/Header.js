@@ -3,18 +3,22 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import { Logo } from "./Logo";
 import { debounce } from "helpers/debounce";
+import { device } from "helpers/breakpoints";
 
 const StyledHeader = styled.header`
   position: fixed;
-  box-shadow: ${props => props.scrolled && "0 0 3rem rgba(0, 0, 0, 0.1)"};
+  box-shadow: ${(props) => props.scrolled && "0 0 3rem rgba(0, 0, 0, 0.1)"};
   top: 0;
-  height: ${props => props.scrolled ? "3.75rem": "5rem"};
-  background: ${props => props.scrolled ? "rgba(255, 255, 255, 0.9)" : "white"};
+  height: ${(props) => (props.scrolled ? "3rem" : "4rem")};
+  background: ${(props) => (props.scrolled ? "rgba(255, 255, 255, 0.9)" : "white")};
   backdrop-filter: blur(5px);
   transition: box-shadow 0.3s ease, height 0.13s;
   z-index: 99;
   width: 100%;
   contain: layout;
+  @media ${device.mobile} {
+    height: ${(props) => (props.scrolled ? "2.5rem" : "3rem")};
+  }
 
   nav {
     height: 100%;
@@ -25,6 +29,9 @@ const StyledHeader = styled.header`
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
+    @media ${device.mobile} {
+      padding: 0 0.5rem;
+    }
   }
 
   a {
@@ -37,6 +44,26 @@ const StyledHeader = styled.header`
     align-items: center;
     a:hover {
       text-decoration: underline;
+    }
+  }
+
+  .logo-container {
+    transition: all 0.3s;
+    transform-origin: 0% 50%;
+    transform: ${(props) => props.scrolled && "scale(0.8)"};
+    @media ${device.mobile} {
+      transform: ${(props) => props.scrolled && "scale(0.7)"};
+      h1 {
+        margin: ${(props) => props.scrolled ? 0 : "0 0.3rem"};
+      }
+    }
+    .logo {
+      transition: all 0.3s;
+      transform-origin: 0% 50%;
+      transform: ${(props) => props.scrolled && "scale(0.9)"};
+      @media ${device.mobile} {
+        transform: ${(props) => props.scrolled && "scale(0.8)"};
+      }
     }
   }
 `;
