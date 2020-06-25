@@ -77,7 +77,7 @@ const StyledPost = styled(Link)`
     width: 100%;
     height: 100%;
     border-radius: 0.5rem;
-    box-shadow: 0 25px 40px 6px rgba(0, 0, 0, 0.1), 0 18px 25px 3px rgba(0, 0, 0, 0.2), 0 7px 12px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 25px 30px 6px rgba(0, 0, 0, 0.1), 0 18px 20px 3px rgba(0, 0, 0, 0.2), 0 7px 10px 1px rgba(0, 0, 0, 0.1);
     @media ${device.mobile} {
       box-shadow: 0 22px 25px 4px rgba(0, 0, 0, 0.075), 0 15px 13px 2px rgba(0, 0, 0, 0.125), 0 6px 8px 0.5px rgba(0, 0, 0, 0.075);
     }
@@ -129,7 +129,7 @@ const StyledFeaturedLabel = styled.div`
   }
 `;
 
-export const FeaturedPost = ({ title, slug, createdAt, description: { description }, heroImage }) => (
+export const MainFeaturedPost = ({ title, slug, createdAt, description: { description }, heroImage }) => (
   <StyledPost to={`/blog/${slug}`}>
     <Img className="picture" {...heroImage} alt={title} />
     <StyledFeaturedLabel className="featured-label">Featured</StyledFeaturedLabel>

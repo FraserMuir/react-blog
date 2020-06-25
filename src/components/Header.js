@@ -5,23 +5,34 @@ import { Logo } from "./Logo";
 import { debounce } from "helpers/debounce";
 import { device } from "helpers/breakpoints";
 
-const StyledHeader = styled.header`
+const StyledHeader = styled.div`
   position: fixed;
-  box-shadow: ${(props) => props.scrolled && "0 0 3rem rgba(0, 0, 0, 0.1)"};
   top: 0;
-  height: ${(props) => (props.scrolled ? "3.5rem" : "4rem")};
-  background: ${(props) => (props.scrolled ? "rgba(255, 255, 255, 0.9)" : "white")};
-  backdrop-filter: blur(5px);
-  transition: box-shadow 0.3s ease, height 0.13s;
-  z-index: 99;
   width: 100%;
+  z-index: 99;
   contain: layout;
-  @media ${device.mobile} {
-    height: ${(props) => (props.scrolled ? "3rem" : "3.5rem")};
+
+  header {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    box-shadow: ${(props) => props.scrolled && "0 0 3rem rgba(0, 0, 0, 0.1)"};
+    transform-origin: 50% 0%;
+    transform: ${(props) => props.scrolled && "scaleY(0.8)"};
+    background: ${(props) => (props.scrolled ? "rgba(255, 255, 255, 0.9)" : "white")};
+    backdrop-filter: blur(5px);
+    will-change: box-shadow, transform;
+    transition: box-shadow 0.2s ease, transform 0.13s;
+    width: 100%;
+    contain: layout;
+    height: 4rem;
+    @media ${device.mobile} {
+      height: 3.5rem;
+    }
   }
 
   nav {
-    height: 100%;
+    height: 4rem;
     width: 100%;
     max-width: 60rem;
     margin: auto;
@@ -29,6 +40,8 @@ const StyledHeader = styled.header`
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
+    transform: ${(props) => props.scrolled && "translateY(-1rem)"};
+    transition: transform 0.13s;
     @media ${device.mobile} {
       padding: 0 0.5rem;
     }
@@ -48,20 +61,21 @@ const StyledHeader = styled.header`
   }
 
   .logo-container {
-    transition: all 0.3s;
+    transition: all 0.2s;
     transform-origin: 0% 50%;
     transform: ${(props) => props.scrolled && "scale(0.95)"};
     h1 {
-      margin: ${(props) => (props.scrolled ? "0 0.2rem" : "0 0.4rem")};
+      transition: all 0.2s;
+      transform: ${(props) => props.scrolled && "translateX(-0.35rem)"};
     }
     @media ${device.mobile} {
       transform: ${(props) => props.scrolled && "scale(0.75)"};
       h1 {
-        margin: ${(props) => (props.scrolled ? 0 : "0 0.35rem")};
+        transform: ${(props) => props.scrolled && "translateX(-0.3rem)"};
       }
     }
     .logo {
-      transition: all 0.3s;
+      transition: all 0.2s;
       transform-origin: 0% 50%;
       transform: ${(props) => props.scrolled && "scale(0.9)"};
       @media ${device.mobile} {
@@ -98,6 +112,7 @@ export const Header = () => {
 
   return (
     <StyledHeader scrolled={hasScrolled}>
+      <header />
       <nav>
         <StyledHomeLink to="/">
           <Logo />

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { graphql } from "gatsby";
 import { usePage } from "components/Layout";
-import { FeaturedPost } from "components/FeaturedPost";
+import { MainFeaturedPost } from "components/MainFeaturedPost";
 import { Post } from "components/Post";
 
 const StyledPostsList = styled.div`
@@ -17,11 +17,13 @@ const Home = ({ data }) => {
 
   const { featured, nonFeatured } = data;
 
+  const mainFeature = featured.edges[0].node;
+  const otherFeatures = featured.edges[(1, 2)].map((f) => f.node);
+
   return (
     <StyledPostsList>
-      {featured.edges.map(({ node }) => (
-        <FeaturedPost key={node.id} {...node} />
-      ))}
+      <MainFeaturedPost {...mainFeature} />
+       <OtherFeaturesPosts posts={otherFeatures} />
       {nonFeatured.edges.map(({ node }) => (
         <Post key={node.id} {...node} />
       ))}
