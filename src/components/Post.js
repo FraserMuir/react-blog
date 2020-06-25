@@ -2,8 +2,6 @@ import React from "react";
 import Img from "gatsby-image";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { device, size } from "helpers/breakpoints";
-import { fonts } from "helpers/fonts";
 
 const StyledPost = styled(Link)`
   display: flex;

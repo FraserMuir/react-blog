@@ -17,7 +17,7 @@ const StyledHeader = styled.header`
   width: 100%;
   contain: layout;
   @media ${device.mobile} {
-    height: ${(props) => (props.scrolled ? "2.5rem" : "3rem")};
+    height: ${(props) => (props.scrolled ? "3rem" : "3.5rem")};
   }
 
   nav {
@@ -52,9 +52,9 @@ const StyledHeader = styled.header`
     transform-origin: 0% 50%;
     transform: ${(props) => props.scrolled && "scale(0.8)"};
     @media ${device.mobile} {
-      transform: ${(props) => props.scrolled && "scale(0.7)"};
+      transform: ${(props) => props.scrolled && "scale(0.75)"};
       h1 {
-        margin: ${(props) => props.scrolled ? 0 : "0 0.3rem"};
+        margin: ${(props) => props.scrolled ? 0 : "0 0.35rem"};
       }
     }
     .logo {
@@ -62,7 +62,7 @@ const StyledHeader = styled.header`
       transform-origin: 0% 50%;
       transform: ${(props) => props.scrolled && "scale(0.9)"};
       @media ${device.mobile} {
-        transform: ${(props) => props.scrolled && "scale(0.8)"};
+        transform: ${(props) => props.scrolled && "scale(0.85)"};
       }
     }
   }
