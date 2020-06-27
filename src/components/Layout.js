@@ -4,9 +4,6 @@ import { SEO } from "./SEO";
 import { Header } from "./Header";
 import { Transition } from "./Transition";
 
-import "typeface-montserrat";
-import "typeface-noto-serif";
-import "typeface-lobster-two";
 import { fonts } from "helpers/fonts";
 import { device } from "helpers/breakpoints";
 
@@ -29,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const StyledLayout = styled.div`
+  @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Montserrat:ital@0;1&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
   width: 100%;
   height: 100%;
   main {
