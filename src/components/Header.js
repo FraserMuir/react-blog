@@ -9,7 +9,7 @@ const StyledHeader = styled.header`
   position: fixed;
   box-shadow: ${(props) => props.scrolled && "0 0 3rem rgba(0, 0, 0, 0.1)"};
   top: 0;
-  height: ${(props) => (props.scrolled ? "3rem" : "4rem")};
+  height: ${(props) => (props.scrolled ? "3.5rem" : "4rem")};
   background: ${(props) => (props.scrolled ? "rgba(255, 255, 255, 0.9)" : "white")};
   backdrop-filter: blur(5px);
   transition: box-shadow 0.3s ease, height 0.13s;
@@ -17,7 +17,7 @@ const StyledHeader = styled.header`
   width: 100%;
   contain: layout;
   @media ${device.mobile} {
-    height: ${(props) => (props.scrolled ? "2.5rem" : "3rem")};
+    height: ${(props) => (props.scrolled ? "3rem" : "3.5rem")};
   }
 
   nav {
@@ -50,11 +50,14 @@ const StyledHeader = styled.header`
   .logo-container {
     transition: all 0.3s;
     transform-origin: 0% 50%;
-    transform: ${(props) => props.scrolled && "scale(0.8)"};
+    transform: ${(props) => props.scrolled && "scale(0.95)"};
+    h1 {
+      margin: ${(props) => (props.scrolled ? "0 0.2rem" : "0 0.4rem")};
+    }
     @media ${device.mobile} {
-      transform: ${(props) => props.scrolled && "scale(0.7)"};
+      transform: ${(props) => props.scrolled && "scale(0.75)"};
       h1 {
-        margin: ${(props) => props.scrolled ? 0 : "0 0.3rem"};
+        margin: ${(props) => (props.scrolled ? 0 : "0 0.35rem")};
       }
     }
     .logo {
@@ -62,7 +65,7 @@ const StyledHeader = styled.header`
       transform-origin: 0% 50%;
       transform: ${(props) => props.scrolled && "scale(0.9)"};
       @media ${device.mobile} {
-        transform: ${(props) => props.scrolled && "scale(0.8)"};
+        transform: ${(props) => props.scrolled && "scale(0.85)"};
       }
     }
   }

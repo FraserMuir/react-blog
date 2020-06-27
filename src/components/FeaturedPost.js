@@ -2,7 +2,7 @@ import React from "react";
 import Img from "gatsby-image";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { device, size } from "helpers/breakpoints";
+import { device } from "helpers/breakpoints";
 import { fonts } from "helpers/fonts";
 import { colors } from "helpers/colors";
 
@@ -89,11 +89,11 @@ const StyledFeaturedLabel = styled.div`
   left: -0.5rem;
   top: 1.5rem;
   padding: 0.2rem 0.5em 0.2rem 1rem;
-  color: ${colors.whiteText};
+  color: white;
   font-family: ${fonts.display};
   font-weight: bold;
   font-size: 1.3rem;
-  background: ${colors.blue};
+  background: ${colors.mediumBlue};
   z-index: 10;
   box-shadow: 3px 3px 0 ${colors.darkBlue};
   border-top-left-radius: 0.2rem;
@@ -113,7 +113,7 @@ const StyledFeaturedLabel = styled.div`
     top: 0;
     right: -1.2rem;
     bottom: 0;
-    border: 1rem solid ${colors.blue};
+    border: 1rem solid ${colors.mediumBlue};
     border-right-color: transparent;
     filter: drop-shadow(3px 3px ${colors.darkBlue});
   }
@@ -123,7 +123,7 @@ const StyledFeaturedLabel = styled.div`
     font-size: 1rem;
     &:after {
       right: -1rem;
-      border: 0.8rem solid ${colors.blue};
+      border: 0.8rem solid ${colors.mediumBlue};
       border-right-color: transparent;
     }
   }
