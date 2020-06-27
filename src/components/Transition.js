@@ -3,6 +3,7 @@ import { TransitionGroup, Transition as ReactTransition } from "react-transition
 
 const transitionStyles = {
   entering: {
+    position: "absolute",
     opacity: 0,
   },
   entered: {
