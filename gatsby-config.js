@@ -28,6 +28,13 @@ module.exports = {
     "gatsby-transformer-remark",
     "gatsby-plugin-styled-components",
     {
+      resolve: "gatsby-plugin-subfont",
+      options: {
+        silent: false,
+        recursive: true
+      }
+    },
+    {
       resolve: "gatsby-plugin-layout",
       options: {
         component: require.resolve("./src/components/Layout"),
