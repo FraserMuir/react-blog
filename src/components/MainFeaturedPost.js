@@ -64,7 +64,7 @@ const StyledPost = styled(Link)`
     .date {
       margin: 0;
       color: ${colors.lightWhiteText};
-      text-shadow: 2px 2px 0px #000;
+      text-shadow: 1px 1px 0px #000;
       font: 1.5rem ${fonts.display};
       white-space: nowrap;
       @media ${device.mobile} {
