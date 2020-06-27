@@ -33,7 +33,7 @@ export const SEO = ({ title, description, image, isArticle = true }) => {
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
       <link
-        href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Montserrat:ital@0;1&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        href={`https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Montserrat:ital@0;1&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap&text=abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890%21%C2%A3%24%25%5E%26%2A%28%29%3B%3A%3C%3E%5B%5D%7B%7D%23~%27%40%2F%3F.%2C%3D%2B-_%60%C2%AC`}
         rel="stylesheet"
       />
       <meta name="description" content={seo.description} />
