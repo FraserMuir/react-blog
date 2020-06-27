@@ -32,10 +32,15 @@ export const SEO = ({ title, description, image, isArticle = true }) => {
   };
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
-      <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Montserrat:ital@0;1&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Montserrat:ital@0;1&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet"
+      />
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
-      {seo.origins.map((origin) => <link rel="preconnect" href={origin} key={origin}></link>).join(" ")}
+      {seo.origins.map((origin) => (
+        <link rel="preconnect" href={origin} key={origin}></link>
+      ))}
       {seo.url && <meta property="og:url" content={seo.url} />}
       {isArticle && <meta property="og:type" content="article" />}
       {seo.title && <meta property="og:title" content={seo.title} />}
