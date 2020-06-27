@@ -25,14 +25,14 @@ const StyledHeader = styled.div`
     transition: box-shadow 0.2s ease, transform 0.13s;
     width: 100%;
     contain: layout;
-    height: 4rem;
+    height: 4.5rem;
     @media ${device.mobile} {
       height: 3.5rem;
     }
   }
 
   nav {
-    height: 4rem;
+    height: 4.5rem;
     width: 100%;
     max-width: 60rem;
     margin: auto;
@@ -40,9 +40,12 @@ const StyledHeader = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 0 1rem;
-    transform: ${(props) => props.scrolled && "translateY(-1rem)"};
+    transform: ${(props) => props.scrolled && "translateY(-0.5rem)"};
+    will-change: box-shadow, transform;
     transition: transform 0.13s;
     @media ${device.mobile} {
+      transform: ${(props) => props.scrolled && "translateY(-0.35rem)"};
+      height: 3.5rem;
       padding: 0 0.5rem;
     }
   }
@@ -61,11 +64,11 @@ const StyledHeader = styled.div`
   }
 
   .logo-container {
-    transition: all 0.2s;
+    transition: transform 0.2s;
     transform-origin: 0% 50%;
     transform: ${(props) => props.scrolled && "scale(0.95)"};
     h1 {
-      transition: all 0.2s;
+      transition: transform 0.2s;
       transform: ${(props) => props.scrolled && "translateX(-0.35rem)"};
     }
     @media ${device.mobile} {
@@ -75,7 +78,7 @@ const StyledHeader = styled.div`
       }
     }
     .logo {
-      transition: all 0.2s;
+      transition: transform 0.2s;
       transform-origin: 0% 50%;
       transform: ${(props) => props.scrolled && "scale(0.9)"};
       @media ${device.mobile} {

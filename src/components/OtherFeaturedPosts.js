@@ -21,11 +21,11 @@ const Post = ({ title, slug, createdAt, description: { description }, heroImage 
   </StyledPost>
 )
 
-export const OtherFeaturesPosts = ({ posts }) => {
+export const OtherFeaturedPosts = ({ posts }) => (
   <StyledContainer>
     <h3>More Featured</h3>
     <div className="posts-container">
-      {posts.map(post => (
+      {posts.map((post, i) => (
         <>
           {i > 0 && <hr />}
           <Post key={post.id} {...post} />
@@ -33,4 +33,4 @@ export const OtherFeaturesPosts = ({ posts }) => {
       ))}
     </div>
   </StyledContainer>
-}
+)
