@@ -12,7 +12,7 @@ module.exports = {
     url: "https://web-tricks.dev",
     siteUrl: "https://web-tricks.dev/",
     blogUrl: "/blog",
-    origins: ["https://images.ctfassets.net", "https://fonts.googleapis.com", "https://fonts.gstatic.com"],
+    origins: ["https://images.ctfassets.net"],
     titleTemplate: "%s · Web Tricks",
     description: "A collection of web development tips and tricks.",
     image: "logo.webp",
