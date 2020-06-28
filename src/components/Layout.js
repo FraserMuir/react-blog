@@ -4,9 +4,7 @@ import { SEO } from "./SEO";
 import { Header } from "./Header";
 import { Transition } from "./Transition";
 
-import "typeface-noto-serif";
-import "typeface-lobster-two";
-import "typeface-montserrat";
+import "styles/typography.css";
 
 import { fonts } from "helpers/fonts";
 import { device } from "helpers/breakpoints";

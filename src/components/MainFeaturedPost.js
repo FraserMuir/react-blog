@@ -91,8 +91,12 @@ const StyledFeaturedLabel = styled.div`
   padding: 0.2rem 0.5em 0.2rem 1rem;
   color: white;
   font-family: ${fonts.display};
-  font-weight: bold;
+  font-weight: normal;
   font-size: 1.3rem;
+  text-shadow: 2px 2px ${colors.darkBlue};
+  @media ${device.mobile} {
+    text-shadow: 1px 1px ${colors.darkBlue};
+  }
   background: ${colors.mediumBlue};
   z-index: 10;
   box-shadow: 3px 3px 0 ${colors.darkBlue};

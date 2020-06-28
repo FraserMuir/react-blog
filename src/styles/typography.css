@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Noto Serif";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("Noto Serif Regular"), local("Noto Serif-Regular"), url("./fonts/noto-serif-regular.woff2");
+}
+@font-face {
+  font-family: "Noto Serif";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: local("Noto Serif Regular italic"), local("Noto Serif-Regularitalic"), url("./fonts/noto-serif-regular-italic.woff2");
+}
+@font-face {
+  font-family: "Noto Serif";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local("Noto Serif Bold"), local("Noto Serif-Bold"), url("./fonts/noto-serif-bold.woff2");
+}
+@font-face {
+  font-family: "Noto Serif";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: local("Noto Serif Bold italic"), local("Noto Serif-Bolditalic"), url("./fonts/noto-serif-bold-italic.woff2");
+}
+@font-face {
+  font-family: "Lobster Two";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("Lobster Two Regular"), local("Lobster Two-Regular"), url("./fonts/lobster-two-regular.woff2");
+}
+@font-face {
+  font-family: "Lobster Two";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local("Lobster Two Bold"), local("Lobster Two-Bold"), url("./fonts/lobster-two-bold.woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: local("Montserrat Regular"), local("Montserrat-Regular"), url("./fonts/montserrat-regular.woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: local("Montserrat Bold"), local("Montserrat-Bold"), url("./fonts/montserrat-bold.woff2");
+}
