@@ -92,7 +92,7 @@ const StyledFeaturedLabel = styled.div`
   color: white;
   font-family: ${fonts.display};
   font-weight: normal;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   text-shadow: 2px 2px ${colors.darkBlue};
   @media ${device.mobile} {
     text-shadow: 1px 1px ${colors.darkBlue};
@@ -117,7 +117,7 @@ const StyledFeaturedLabel = styled.div`
     top: 0;
     right: -1.2rem;
     bottom: 0;
-    border: 1rem solid ${colors.mediumBlue};
+    border: 1.1rem solid ${colors.mediumBlue};
     border-right-color: transparent;
     filter: drop-shadow(3px 3px ${colors.darkBlue});
   }
