@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { graphql } from "gatsby";
 
 import { device } from "helpers/breakpoints";
-import { fonts } from "helpers/fonts";
+import { fonts } from "styles/fonts";
 
 const StyledBlogContainer = styled.div`
   width: 100%;
@@ -76,7 +76,7 @@ export const pageQuery = graphql`
       title
       createdAt(formatString: "DD MMM YYYY")
       heroImage {
-        fluid {
+        fluid (maxWidth: 1040) {
           ...GatsbyContentfulFluid_withWebp
         }
       }

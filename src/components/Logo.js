@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { fonts } from "helpers/fonts";
-import { colors } from "helpers/colors";
+import { fonts } from "styles/fonts";
+import { colors } from "styles/colors";
 import { device } from "helpers/breakpoints";
 
 const StyledLogoContainer = styled.div`

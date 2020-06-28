@@ -6,7 +6,7 @@ import { Transition } from "./Transition";
 
 import "styles/typography.css";
 
-import { fonts } from "helpers/fonts";
+import { fonts } from "styles/fonts";
 import { device } from "helpers/breakpoints";
 
 const GlobalStyle = createGlobalStyle`

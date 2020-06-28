@@ -25,8 +25,20 @@ module.exports = {
     "gatsby-plugin-robots-txt",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
-    "gatsby-transformer-remark",
     "gatsby-plugin-styled-components",
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images-contentful`,
+            options: {
+              maxWidth: 792,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: "gatsby-plugin-layout",
       options: {

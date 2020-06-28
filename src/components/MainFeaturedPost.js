@@ -3,8 +3,8 @@ import Img from "gatsby-image";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { device } from "helpers/breakpoints";
-import { fonts } from "helpers/fonts";
-import { colors } from "helpers/colors";
+import { fonts } from "styles/fonts";
+import { colors } from "styles/colors";
 
 const StyledPost = styled(Link)`
   background: white;
@@ -117,7 +117,7 @@ const StyledFeaturedLabel = styled.div`
     top: 0;
     right: -1.2rem;
     bottom: 0;
-    border: 1.1rem solid ${colors.mediumBlue};
+    border: 1.125rem solid ${colors.mediumBlue};
     border-right-color: transparent;
     filter: drop-shadow(3px 3px ${colors.darkBlue});
   }

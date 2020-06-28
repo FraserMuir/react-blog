@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { colors } from "helpers/colors";
+import { colors } from "styles/colors";
 
 const StyledContainer = styled.div`
   h3 {

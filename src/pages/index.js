@@ -18,14 +18,14 @@ const Home = ({ data }) => {
 
   const { featured, nonFeatured } = data;
 
-  const mainFeature = featured.edges[0].node;
-  const otherFeatures = featured.edges.slice(1, 3).map((f) => f.node);
+  const mainFeature = featured.nodes[0];
+  const otherFeatures = featured.nodes.slice(1, 3);
 
   return (
     <StyledPostsList>
       <MainFeaturedPost {...mainFeature} />
       <OtherFeaturedPosts posts={otherFeatures} />
-      {nonFeatured.edges.map(({ node }) => (
+      {nonFeatured.nodes.map((node) => (
         <Post key={node.id} {...node} />
       ))}
     </StyledPostsList>
@@ -35,33 +35,36 @@ const Home = ({ data }) => {
 export default Home;
 
 export const pageQuery = graphql`
-  fragment post on ContentfulBlogPost {
-    id
-    title
-    slug
-    createdAt(formatString: "DD MMM YYYY")
-    heroImage {
-      fluid {
-        ...GatsbyContentfulFluid_withWebp
-      }
-    }
-    description {
-      description
-    }
-  }
-
   query Posts {
     featured: allContentfulBlogPost(filter: { featured: { eq: true } }, sort: { fields: publishDate, order: DESC }) {
-      edges {
-        node {
-          ...post
+      nodes {
+        id
+        title
+        slug
+        createdAt(formatString: "DD MMM YYYY")
+        heroImage {
+          fluid(maxWidth: 960) {
+            ...GatsbyContentfulFluid_withWebp
+          }
+        }
+        description {
+          description
         }
       }
     }
     nonFeatured: allContentfulBlogPost(filter: { featured: { eq: false } }, sort: { fields: publishDate, order: DESC }) {
-      edges {
-        node {
-          ...post
+      nodes {
+        id
+        title
+        slug
+        createdAt(formatString: "DD MMM YYYY")
+        heroImage {
+          fluid {
+            ...GatsbyContentfulFluid_withWebp
+          }
+        }
+        description {
+          description
         }
       }
     }
