@@ -27,6 +27,15 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-styled-components",
     {
+      resolve: "gatsby-plugin-scroll-indicator",
+      options: {
+        color: "#5ec5ff",
+        height: "3px",
+        paths: ["/blog/**"],
+        zIndex: `9999`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [

@@ -3,5 +3,5 @@ export const onRouteUpdate = ({ location, prevLocation }) => {
 }
 
 const registerPageView = () => {
-  window.posthog.capture("$pageview");
+  if (window.posthog) window.posthog.capture("$pageview");
 }
