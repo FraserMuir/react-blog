@@ -9,7 +9,7 @@ const API_HOST = "https://app.posthog.com";
 
 // Initialises PostHog Analytics via a script injected into the html head
 const runPostHogAnalytics = (setHeadComponents) => {
-  // if (process.env.NODE_ENV !== "production") return null;
+  if (process.env.NODE_ENV !== "production") return null;
 
   const posthogScript = (
     <script
