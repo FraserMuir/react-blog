@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { Logo } from "./Logo";
@@ -108,9 +108,10 @@ const StyledHomeLink = styled(Link)`
 export const Header = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const storeScroll = () => setHasScrolled(window.scrollY > 35);
     document.addEventListener("scroll", debounce(storeScroll), { passive: true });
+    storeScroll();
   }, []);
 
   return (
