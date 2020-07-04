@@ -134,7 +134,7 @@ const StyledFeaturedLabel = styled.div`
 `;
 
 export const MainFeaturedPost = ({ title, slug, createdAt, description: { description }, heroImage }) => (
-  <StyledPost to={`/blog/${slug}`}>
+  <StyledPost to={`/blog/${slug}/`}>
     <Img className="picture" {...heroImage} alt={title} />
     <StyledFeaturedLabel className="featured-label">Featured</StyledFeaturedLabel>
     <div className="details">

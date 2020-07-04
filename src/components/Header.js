@@ -121,7 +121,7 @@ export const Header = () => {
           <Logo />
         </StyledHomeLink>
         <div className="tab-container">
-          <StyledTab to="/about">About</StyledTab>
+          <StyledTab to="/about/">About</StyledTab>
         </div>
       </nav>
     </StyledHeader>

@@ -17,7 +17,7 @@ const StyledPost = styled(Link)`
 `;
 
 export const Post = ({ title, slug, createdAt, description: { description }, heroImage }) => (
-  <StyledPost to={`/blog/${slug}`}>
+  <StyledPost to={`/blog/${slug}/`}>
     <Img className="picture" {...heroImage} alt={title} />
     <div className="details">
       <p className="desc">{description}</p>
