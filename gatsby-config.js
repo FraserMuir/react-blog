@@ -78,11 +78,22 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-offline",
+      resolve: `gatsby-plugin-offline`,
       options: {
-        workboxConfig: {
-          globPatterns: ["**/*"],
-        },
+        runtimeCaching: [
+          {
+            urlPattern: /(\.js$|\.css$|static\/)/,
+            handler: `networkFirst`,
+          },
+          {
+            urlPattern: /^https?:.*\page-data\/.*\/page-data\.json/,
+            handler: `networkFirst`,
+          },
+          {
+            urlPattern: /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
+            handler: `staleWhileRevalidate`,
+          },
+        ],
       },
     },
   ],
