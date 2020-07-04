@@ -26,7 +26,6 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     "gatsby-plugin-styled-components",
-    "gatsby-plugin-force-trailing-slashes",
     {
       resolve: "gatsby-plugin-scroll-indicator",
       options: {
@@ -79,36 +78,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-offline`,
+      resolve: "gatsby-plugin-offline",
       options: {
-        runtimeCaching: [
-          {
-            urlPattern: /(\.js$|\.css$|static\/)/,
-            handler: `CacheFirst`,
-          },
-          {
-            urlPattern: /^https?:.*\/page-data\/.*\/(page-data|app-data)\.json$/,
-            handler: `NetworkFirst`,
-            options: {
-              networkTimeoutSeconds: 1,
-            },
-          },
-          {
-            urlPattern: /^https?:.*\.(png|jpg|jpeg|webp|svg|gif|tiff|js|woff|woff2|json|css)$/,
-            handler: `StaleWhileRevalidate`,
-          },
-          {
-            urlPattern: /^https?:\/\/fonts\.googleapis\.com\/css/,
-            handler: `StaleWhileRevalidate`,
-          },
-          {
-            urlPattern: /\/$/,
-            handler: `NetworkFirst`,
-            options: {
-              networkTimeoutSeconds: 1,
-            },
-          },
-        ],
+        workboxConfig: {
+          globPatterns: ["**/*"],
+        },
       },
     },
   ],
