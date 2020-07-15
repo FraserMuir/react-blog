@@ -78,13 +78,5 @@ module.exports = {
         icon: "static/logo.webp",
       },
     },
-    {
-      resolve: "gatsby-plugin-offline",
-      options: {
-        workboxConfig: {
-          globPatterns: ["**/*"],
-        },
-      },
-    },
   ],
 };
