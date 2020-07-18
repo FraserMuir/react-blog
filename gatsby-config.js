@@ -19,6 +19,7 @@ module.exports = {
     twitterUsername: "@frasermuir14",
   },
   plugins: [
+    "gatsby-plugin-preact",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-resolve-src",
